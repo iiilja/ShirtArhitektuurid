@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <display-name>JSP/Servlet/JavaBean kombinatsioon</display-name>
+    <description>
+        servlet/bean fesfefes
+    </description>
+
+    <servlet>
+        <servlet-name>
+            shirtServlet
+        </servlet-name>
+        <servlet-class>
+            controller.ShirtServlet
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>shirtServlet</servlet-name>
+        <url-pattern>/s</url-pattern>
+    </servlet-mapping>
+	
+</web-app>
