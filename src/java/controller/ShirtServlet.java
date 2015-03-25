@@ -6,7 +6,7 @@
 package controller;
 
 import db.ShirtDAO;
-import db.Validator;
+import db.ShirtValidation;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -87,7 +87,7 @@ public class ShirtServlet extends HttpServlet {
         String id = request.getParameter("id");
         System.out.println("Got id = "+id+" size"+size+" cost"+cost+" desc = "+desc);
         Map<String, String> errorList = new HashMap<>();
-        errorList = Validator.vld(id, cost, size);
+        errorList = ShirtValidation.vld(id, cost, size);
 
         ShirtForm form = new ShirtForm(id, cost, size, desc);
         
