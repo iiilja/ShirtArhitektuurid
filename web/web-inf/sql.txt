@@ -1,0 +1,13 @@
+create database t093817_shirt;
+CREATE TABLE shirt
+(
+  id serial NOT NULL,
+  size character varying(3),
+  cost integer,
+  description character varying(255),
+  CONSTRAINT pk_shirt_id PRIMARY KEY (id)
+);
+insert into shirt(size,cost,description)
+ values('xl',15,'poliester : 15 cotton : 85');
+insert into shirt(size,cost,description)
+ values('s',6,'Mens shirt by Jack Jones. Dark colours shoul be washed separately');
