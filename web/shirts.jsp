@@ -11,7 +11,7 @@
 </head>
 <body>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<a href='s'>servlet</a> | <a href='http://imbi.ld.ttu.ee/tomcat_webapp_logs/t093817_shirt/log.txt'>log</a> <br>
+<a href='s'>servlet</a> | <a href='http://imbi.ld.ttu.ee/tomcat_webapp_logs/t093817_Shirt/log.txt'>log</a> <br>
 Shitrs list: 
 <br>
 

@@ -4,7 +4,6 @@
 <%@page import="model.ShirtForm"%> 
 <jsp:useBean id="shirt" scope="request" type="model.ShirtForm"/>
 <jsp:useBean id="formError" class="java.util.HashMap" scope="request"/>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
     <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -16,7 +15,7 @@
         <body>
 
 
-            <a href='s'>servlet</a> | <a href='http://imbi.ld.ttu.ee/tomcat_webapp_logs/t112528_car/log.txt'>log.txt</a> <br>
+            <a href='s'>servlet</a> | <a href='http://imbi.ld.ttu.ee/tomcat_webapp_logs/t093817_Shirt/log.txt'>log.txt</a> <br>
 
             <form action='s?action=save' method=POST>
             <%

@@ -14,7 +14,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.CarForm;
 import model.Shirt;
 import model.ShirtForm;
 import org.apache.log4j.Logger;
@@ -42,7 +41,7 @@ public class ShirtServlet extends HttpServlet {
      * response)
      */
     public void init() {
-        logger.info("CarServlet.init(): mind loodi");
+        logger.error("CarServlet.init(): mind loodi");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
