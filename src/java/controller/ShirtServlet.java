@@ -6,7 +6,7 @@
 package controller;
 
 import db.ShirtDAO;
-import db.validator;
+import db.Validator;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.CarForm;
 import model.Shirt;
+import model.ShirtForm;
 import org.apache.log4j.Logger;
 
 /**
@@ -41,7 +42,6 @@ public class ShirtServlet extends HttpServlet {
      * response)
      */
     public void init() {
-        db.DB();
         logger.info("CarServlet.init(): mind loodi");
     }
 
@@ -63,7 +63,7 @@ public class ShirtServlet extends HttpServlet {
             } else {
                 Shirt shirt = db.findById(foo);
                 System.out.println(shirt);
-                request.setAttribute("shirt", shirt);
+                request.setAttribute("shirt", shirt.toForm());
                 request.getRequestDispatcher("shirt.jsp").forward(request, response);
             }
 
@@ -82,26 +82,24 @@ public class ShirtServlet extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String type = request.getParameter("car_type");
+        String size = request.getParameter("size");
         String desc = request.getParameter("description");
-        String count = request.getParameter("count");
+        String cost = request.getParameter("cost");
         String id = request.getParameter("id");
+        System.out.println("Got id = "+id+" size"+size+" cost"+cost+" desc = "+desc);
         Map<String, String> errorList = new HashMap<>();
-        errorList = validator.vld(count, type);
+        errorList = Validator.vld(id, cost, size);
 
-        CarForm c = new CarForm();
-        c.setId(id);
-        c.setType(type);
-        c.setCount(count);
-        c.setDesc(desc);
+        ShirtForm form = new ShirtForm(id, cost, size, desc);
+        
         if (errorList.isEmpty()) {
-            db.update(c);
+            db.update(form.toShirt());
         } else {
-            logger.error("CarServlet.doPost(): save failed");
+            logger.error("ShirtServlet.doPost(): save failed");
         }
 
         //request.setAttribute("car", db.findById(Integer.parseInt(id)));
-        request.setAttribute("car", c);
+        request.setAttribute("shirt", form);
 
         request.setAttribute("formError", errorList);
 

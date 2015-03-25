@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@page import="model.Shirt"%> 
-<jsp:useBean id="shirt" scope="request" type="model.Shirt"/>
+<%@page import="model.ShirtForm"%> 
+<jsp:useBean id="shirt" scope="request" type="model.ShirtForm"/>
 <jsp:useBean id="formError" class="java.util.HashMap" scope="request"/>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -11,7 +11,7 @@
     <html>
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-            <title>Muuda Auto</title>
+            <title>Change Shirt</title>
         </head>
         <body>
 
@@ -20,21 +20,22 @@
 
             <form action='s?action=save' method=POST>
             <%
+                String trStart = "<TR BGCOLOR='#ffffff'><TD BGCOLOR='#cccccc' nowrap>";
 
                 String id = shirt.getId() + "";
-                String type = shirt.getSize();
-                String count = shirt.getCost() + "";
+                String size = shirt.getSize();
+                String cost = shirt.getCost() + "";
                 String description = shirt.getDescription();
 
-                String countError = "";
-                String typeError = "";
+                String costError = "";
+                String sizeError = "";
 
-                if (formError.get("type") != null) {
-                    typeError = (String) formError.get("type");
+                if (formError.get("size") != null) {
+                    sizeError = (String) formError.get("size");
 
                 }
-                if (formError.get("count") != null) {
-                    countError = (String) formError.get("count");
+                if (formError.get("cost") != null) {
+                    costError = (String) formError.get("cost");
                 }
 
                 if (!formError.isEmpty()) {
@@ -43,10 +44,10 @@
                 }
 
                 out.println("<table bgcolor='#000000' border=0 cellpadding=0 cellspacing=0><tr><td><table width=100% border=0 cellpadding=2 cellspacing=1>");
-                out.println("<TR BGCOLOR='#ffffff'><TD BGCOLOR='#cccccc' nowrap>id:</td><td>&nbsp;" + id + "&nbsp;</TD></tr>");
-                out.println("<TR BGCOLOR='#ffffff'><TD BGCOLOR='#cccccc' nowrap>tyyp:</td><td>&nbsp;<b><font color='#0000ff'><input type='text' value='" + type + "' name='car_type'></font></b>" + typeError + "</TD></tr>");
-                out.println("<TR BGCOLOR='#ffffff'><TD BGCOLOR='#cccccc' nowrap>autode arv:</td><td>&nbsp;<b><font color='#0000ff'><input type='text' value='" + count + "' name='count'></font></b>" + countError + "</TD></tr>");
-                out.println("<TR BGCOLOR='#ffffff'><TD BGCOLOR='#cccccc' nowrap>kirjeldus:</td><td>&nbsp;<b><font color='#0000ff'><textarea name=\"description\" cols=25 rows=6>" + description + "</textarea></font></b></TD></tr>");
+                out.println(trStart + "id:</td><td>&nbsp;" + id + "&nbsp;</TD></tr>");
+                out.println(trStart + "Size:</td><td>&nbsp;<b><font color='#0000ff'><input type='text' value='" + size + "' name='size'></font></b>" + sizeError + "</TD></tr>");
+                out.println(trStart + "Cost:</td><td>&nbsp;<b><font color='#0000ff'><input type='text' value='" + cost + "' name='cost'></font></b>" + costError + "</TD></tr>");
+                out.println(trStart + "Description</td><td>&nbsp;<b><font color='#0000ff'><textarea name=\"description\" cols=25 rows=6>" + description + "</textarea></font></b></TD></tr>");
                 out.println("</table></td></tr></table>");
 
 

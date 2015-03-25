@@ -7,12 +7,12 @@
 <head>
 <script src="static/js/car.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Koik autod</title>
+<title>Shirts</title>
 </head>
 <body>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <a href='s'>servlet</a> | <a href='http://imbi.ld.ttu.ee/tomcat_webapp_logs/t093817_shirt/log.txt'>log</a> <br>
-Autode nimekiri: 
+Shitrs list: 
 <br>
 
 <% 
@@ -20,7 +20,6 @@ Autode nimekiri:
       String type = "" ;
       String count = "" ;
       String desc = "";
-      out.println(shirt.length + " shitr length");
       out.println("<table border=1 cellpadding=2 cellspacing=1>");
       out.println("<tr bgcolor='#cccccc'><td><STRONG> id&nbsp;</td><td><STRONG>Size&nbsp;</td><td><STRONG>Shirt cost&nbsp;</td><td><STRONG>description&nbsp;</td><td>link</td></tr><tr></tr>");
 
@@ -35,12 +34,12 @@ Autode nimekiri:
                 out.println("<TR BGCOLOR='#FFFFFF' ><TD  nowrap>");
                 //out.println("&nbsp;"+ id + "&nbsp;</TD><TD>"+ type +  "&nbsp;</TD><TD>"+ count + "&nbsp");
                 out.println("&nbsp;"+ id + "&nbsp;</TD><TD>"+ type + "&nbsp;</TD><TD>"+ count + "&nbsp;</TD><TD>"+"<a href='javascript:showDescription("+id+")' target='_self'>Description</a>"+"&nbsp");             
-                out.println("</TD><TD align='top' nowrap><a HREF='s?id=" + id + "' TARGET='_self'><b><u>muuda</u><b></a></TD></TR>");
+                out.println("</TD><TD align='top' nowrap><a HREF='s?id=" + id + "' TARGET='_self'><b><u>change</u><b></a></TD></TR>");
               }
      }
     catch(Exception ex)
       { 
-      out.println("Mingi viga" + ex.getMessage());
+      out.println("Some error" + ex.getMessage());
 
        }
          
@@ -56,10 +55,10 @@ Autode nimekiri:
 <div ID="description_form" style="visibility:hidden;">
 <form name=description_form>
 <TABLE BGCOLOR='#cccccc'>
-<TR BGCOLOR='#ffffff'><TD BGCOLOR='#eeeeee' COLSPAN=2>Kirjeldus</TD></tr>
-<TR BGCOLOR='#ffffff'><TD BGCOLOR='#cccccc' nowrap>Auto id</td><td BGCOLOR='#cccccc'><input type=text name=car_id size=4 disabled id='id'></TD></tr>
-<TR BGCOLOR='#ffffff'><TD BGCOLOR='#cccccc' nowrap>kirjeldus:</td><td BGCOLOR='#cccccc'><textarea name=description cols=25 rows=5 id="desc"></textarea></TD></tr>
-<TR BGCOLOR='#ffffff'><TD BGCOLOR='#cccccc' nowrap COLSPAN=2><input type="button" value="KINNI" onClick="hide_description_form()"></TD></tr>
+<TR BGCOLOR='#ffffff'><TD BGCOLOR='#eeeeee' COLSPAN=2>Description</TD></tr>
+<TR BGCOLOR='#ffffff'><TD BGCOLOR='#cccccc' nowrap>Shirt id</td><td BGCOLOR='#cccccc'><input type=text name=car_id size=4 disabled id='id'></TD></tr>
+<TR BGCOLOR='#ffffff'><TD BGCOLOR='#cccccc' nowrap>Description</td><td BGCOLOR='#cccccc'><textarea name=description cols=25 rows=5 id="desc"></textarea></TD></tr>
+<TR BGCOLOR='#ffffff'><TD BGCOLOR='#cccccc' nowrap COLSPAN=2><input type="button" value="HIDE" onClick="hide_description_form()"></TD></tr>
 </TABLE>
 </form>
 </div>

@@ -22,5 +22,17 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         <servlet-name>shirtServlet</servlet-name>
         <url-pattern>/s</url-pattern>
     </servlet-mapping>
-	
+
+    <servlet>
+        <servlet-name>
+            shirtService
+        </servlet-name>
+        <servlet-class>
+            controller.ShirtService
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>shirtService</servlet-name>
+        <url-pattern>/shirtService</url-pattern>
+    </servlet-mapping>
 </web-app>

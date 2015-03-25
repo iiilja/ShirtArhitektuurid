@@ -13,6 +13,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import model.CarForm;
 import model.Shirt;
+import model.ShirtForm;
 
 /**
  *
@@ -23,19 +24,24 @@ public class ShirtDAO {
     Connection con;
     Statement s;
 
-    public void DB() {
+    private void DB() {
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
-
+            e.printStackTrace();
         }
 
-        String serverName = "hektor4.ttu.ee";
+        String serverName = "imbi.ld.ttu.ee";
         String mydatabase = "t093817_shirt";
         String url = "jdbc:postgresql://" + serverName + "/" + mydatabase;
-
         String username = "t093817";
-        String password = "NpxpIU38";
+        String password = "94haTusj";
+        /*String serverName = "hektor4.ttu.ee";
+        String mydatabase = "t093817_shirt";
+        String url = "jdbc:postgresql://" + serverName + "/" + mydatabase;
+        String username = "t093817";
+        String password = "NpxpIU38";*/
+        
         try {
             con = DriverManager.getConnection(url, username, password);
             s = con.createStatement();
@@ -45,6 +51,7 @@ public class ShirtDAO {
     }
 
     public Shirt[] findAll() {
+        DB();
         ArrayList<Shirt> shirtArray = new ArrayList<>();
         try {
             String sql = "SELECT * from shirt";
@@ -63,6 +70,7 @@ public class ShirtDAO {
     }
 
     public Shirt findById(int id) {
+        DB();
         try {
             String sql = "SELECT * FROM shirt WHERE id='" + id + "'";
             ResultSet rs = s.executeQuery(sql);
@@ -80,6 +88,7 @@ public class ShirtDAO {
     }
 
     public void update(Shirt o) {
+        DB();
         String sql = "UPDATE shirt SET size='" + o.getSize() + "', cost='" + o.getCost()+ "', description='" + o.getDescription()+ "' WHERE id='" + o.getId() + "'";
         try {
             s.executeQuery(sql);

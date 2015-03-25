@@ -38,7 +38,6 @@ public class ShirtService extends HttpServlet {
 		
 		String id = request.getParameter("id");
                 ShirtDAO db = new ShirtDAO();
-		db.DB();
 		PrintWriter out = response.getWriter();
 		
 		if(id != null){

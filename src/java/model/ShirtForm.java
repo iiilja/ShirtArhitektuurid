@@ -9,26 +9,25 @@ package model;
  *
  * @author ilja
  */
-public class Shirt {
-    private int id;
-    private int cost;
+public class ShirtForm {
+
+    private String id;
+    private String cost;
     private String size;
     private String description;
 
-    public Shirt(int id, int cost, String size, String description) {
+    public ShirtForm(String id, String cost, String size, String description) {
         this.id = id;
         this.cost = cost;
         this.size = size;
         this.description = description;
     }
-    
-    
 
-    public int getCost() {
+    public String getCost() {
         return cost;
     }
 
-    public void setCost(int cost) {
+    public void setCost(String cost) {
         this.cost = cost;
     }
 
@@ -40,11 +39,11 @@ public class Shirt {
         this.description = description;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -58,12 +57,11 @@ public class Shirt {
 
     @Override
     public String toString() {
-        return "id = " + id + ", cost = "+cost+", size = "+size+", desc = "+ description; 
+        return "id = " + id + ", cost = " + cost + ", size = " + size + ", desc = " + description;
     }
     
-    public ShirtForm toForm(){
-        return new ShirtForm(id + "", cost + "", size, description);
+    public Shirt toShirt(){
+        return new Shirt(Integer.parseInt(id), Integer.parseInt(cost), size, description);
     }
-    
-    
+
 }

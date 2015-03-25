@@ -3,7 +3,7 @@ div = gid("description_form");
 div.style.visibility="visible";
 div2 = gid("id");
 div2.value = id;
-var url = 'http://imbi.ld.ttu.ee:7500/t112528_Car/CarService?id='+id;
+var url = 'http://imbi.ld.ttu.ee:7500/t093817_Shirt/shirtService?id='+id;
 
 
 $.getJSON(url, function (data) {
