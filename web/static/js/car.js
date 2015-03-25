@@ -7,7 +7,7 @@ var url = 'http://imbi.ld.ttu.ee:7500/t093817_Shirt/shirtService?id='+id;
 
 
 $.getJSON(url, function (data) {
-	$("#desc").val(data.desc);
+	$("#desc").val(data.description);
    
     
 });
