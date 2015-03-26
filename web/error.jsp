@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<a href='s'>servlet</a> | <a href='http://imbi.ld.ttu.ee/tomcat_webapp_logs/t112528_car/log.txt'>log.txt</a> <br>
+<a href='s'>servlet</a> | <a href='http://imbi.ld.ttu.ee/tomcat_webapp_logs/t093817_shirt/log.txt'>log.txt</a> <br>
 VIGA! Sellise id-ga lennukit ei ole.
  
 

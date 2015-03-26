@@ -5,7 +5,7 @@
 <jsp:useBean id="shirt" scope="request" type="model.Shirt[]"/>
 <html>
 <head>
-<script src="static/js/car.js"></script>
+<script src="static/js/shirt.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Shirts</title>
 </head>
@@ -56,7 +56,7 @@ Shitrs list:
 <form name=description_form>
 <TABLE BGCOLOR='#cccccc'>
 <TR BGCOLOR='#ffffff'><TD BGCOLOR='#eeeeee' COLSPAN=2>Description</TD></tr>
-<TR BGCOLOR='#ffffff'><TD BGCOLOR='#cccccc' nowrap>Shirt id</td><td BGCOLOR='#cccccc'><input type=text name=car_id size=4 disabled id='id'></TD></tr>
+<TR BGCOLOR='#ffffff'><TD BGCOLOR='#cccccc' nowrap>Shirt id</td><td BGCOLOR='#cccccc'><input type=text name=shirt_id size=4 disabled id='id'></TD></tr>
 <TR BGCOLOR='#ffffff'><TD BGCOLOR='#cccccc' nowrap>Description</td><td BGCOLOR='#cccccc'><textarea name=description cols=25 rows=5 id="desc"></textarea></TD></tr>
 <TR BGCOLOR='#ffffff'><TD BGCOLOR='#cccccc' nowrap COLSPAN=2><input type="button" value="HIDE" onClick="hide_description_form()"></TD></tr>
 </TABLE>

@@ -41,7 +41,7 @@ public class ShirtServlet extends HttpServlet {
      * response)
      */
     public void init() {
-        logger.error("CarServlet.init(): mind loodi");
+        logger.error("ShirtServlet.init(): mind loodi");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -52,12 +52,12 @@ public class ShirtServlet extends HttpServlet {
             try {
                 foo = Integer.parseInt(id);
             } catch (NumberFormatException e) {
-				//logger.error("CarServlet.doGet(): wrong data: "+ id);
+				//logger.error("ShirtServlet.doGet(): wrong data: "+ id);
 
             }
 
             if (db.findById(foo).getId() == 0) {
-                logger.error("CarServlet.doGet(): wrong id: " + id);
+                logger.error("ShirtServlet.doGet(): wrong id: " + id);
                 response.sendRedirect("error.jsp");
             } else {
                 Shirt shirt = db.findById(foo);
@@ -96,8 +96,6 @@ public class ShirtServlet extends HttpServlet {
         } else {
             logger.error("ShirtServlet.doPost(): save failed");
         }
-
-        //request.setAttribute("car", db.findById(Integer.parseInt(id)));
         request.setAttribute("shirt", form);
 
         request.setAttribute("formError", errorList);
