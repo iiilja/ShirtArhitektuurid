@@ -56,7 +56,7 @@ public class ShirtServlet extends HttpServlet {
 
             }
 
-            if (db.findById(foo).getId() == 0) {
+            if (foo == 0 || db.findById(foo).getId() == 0) {
                 logger.error("ShirtServlet.doGet(): wrong id: " + id);
                 response.sendRedirect("error.jsp");
             } else {
